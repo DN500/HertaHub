@@ -1,16 +1,16 @@
 
------------------- EASY CUSTOMIZE ------------------
+
 local LOADING = {
-	-- Direct image link (png/jpg) OR "rbxassetid://123456"
-	ImageUrl = "rbxassetid://138263484946803",  -- ← put your Herta asset id here
+
+	ImageUrl = "rbxassetid://138263484946803", 
 	SoundUrl = "https://www.myinstants.com/media/sounds/kururinnn.mp3",
-	SoundVolume =10,   -- 0–1 (after load)
-	Duration = 2.8,      -- seconds loading screen stays
+	SoundVolume =10,  
+	Duration = 2.8,     
 	Title = "HertaHub",
 	Subtitle = "Loading...",
 }
 local KEY_SYSTEM = {
-	Enabled = true,
+	Enabled = false,
 	ValidKey = "Hertahub",
 	SaveFile = "HentaiHubKey.txt",
 	GetKeyLink = "https://link-center.net/9212709/lqK7CtWhOedH",
