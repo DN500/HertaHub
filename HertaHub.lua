@@ -1,11 +1,4 @@
---[[
-  HentaiHub V3 — Final
-  Flow: Key System → Loading (Herta image + optional sound) → Main Hub
-  Waypoints: pillars + meters, persist, no TP
-  No Silent Aim
-]]
 
------------------- EASY CUSTOMIZE ------------------
 local LOADING = {
 
 	ImageUrl = "rbxassetid://128826102335759", 
@@ -21,23 +14,23 @@ local KEY_SYSTEM = {
 	SaveFile = "HentaiHubKey.txt",
 	GetKeyLink = "https://link-center.net/9212709/lqK7CtWhOedH",
 }
-----------------------------------------------------
+
 
 local function resolveAsset(url, fileName)
 	if not url or url == "" then return nil end
 	url = tostring(url):gsub("%s+", "")
 
-	-- bare number → rbxassetid
+
 	if tonumber(url) then
 		url = "rbxassetid://" .. url
 	end
 
-	-- already roblox scheme
+
 	if url:find("rbxassetid://") or url:find("rbxasset://") or url:find("rbxthumb://") then
 		return url
 	end
 
-	-- External URL → download + getcustomasset
+	
 	local ok, result = pcall(function()
 		if not writefile or not getcustomasset then return nil end
 		local data = game:HttpGet(url)
@@ -49,7 +42,7 @@ local function resolveAsset(url, fileName)
 	return nil
 end
 
--- For ImageLabel: try asset id, then thumbnail (works for many Creator Store images/decals)
+
 local function resolveImageForGui(url)
 	local id = tostring(url or ""):gsub("%s+", "")
 	id = id:gsub("rbxassetid://", ""):gsub("rbxasset://", "")
